@@ -2,15 +2,15 @@ package functions
 
 import "errors"
 
-type Div_scheme struct {
-	Number_a float64
-	Number_b float64
+type DivScheme struct {
+	NumberA float64
+	NumberB float64
 }
 
-func (input Div_scheme) Div(message string) (string, float64, error) {
-	if input.Number_a == 0 || input.Number_b == 0 {
-		return "", 0, errors.New("No puedes dividir entre 0")
+func (input DivScheme) Div(message string) (string, float64, error) {
+	if input.NumberA == 0 || input.NumberB == 0 {
+		return "", 0, errors.New("Ha ocurrido un error, no puedes dividir entre 0")
 	}
-	result := input.Number_a / input.Number_b
+	result := input.NumberA / input.NumberB
 	return message, result, nil
 }

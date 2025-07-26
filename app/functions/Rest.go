@@ -2,15 +2,14 @@ package functions
 
 import "errors"
 
-type Rest_scheme struct {
-	Number_a float64
-	Number_b float64
+type RestScheme struct {
+	NumberA, NumberB float64
 }
 
-func (input Rest_scheme) Rest(message string) (string, int, error) {
-	if input.Number_a == 0 || input.Number_b == 0 {
-		return "", 0, errors.New("No puedes dividir por 0")
+func (input RestScheme) Rest(message string) (string, int, error) {
+	if input.NumberA == 0 || input.NumberB == 0 {
+		return "", 0, errors.New("Ha ocurrido un error, no puedes dividir entre 0")
 	}
-	result := int(int(input.Number_a) % int(input.Number_b))
+	result := int(input.NumberA) % int(input.NumberB)
 	return message, result, nil
 }
